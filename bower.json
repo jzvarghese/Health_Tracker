@@ -1,0 +1,17 @@
+{
+  "name": "Health Tracker",
+  "version": "0.0.0",
+  "description": "Single page application to track caloric intake and various health metrics",
+  "main": "index.html",
+  "moduleType": [],
+  "authors": [
+    "Justin Varghese"
+  ],
+  "license": "MIT",
+  "homepage": "http://jzvarghese.github.io/",
+  "dependencies": {
+    "backbone-min": "https://raw.githubusercontent.com/jashkenas/backbone/master/backbone-min.js",
+    "underscore-min": "https://raw.githubusercontent.com/jashkenas/underscore/master/underscore-min.js",
+    "jquery-min": "http://code.jquery.com/jquery-2.1.4.min.js"
+  }
+}
