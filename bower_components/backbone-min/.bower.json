@@ -1,0 +1,14 @@
+{
+  "name": "backbone-min",
+  "_cacheHeaders": {
+    "ETag": "\"1a1f708dadfd14ec5e4718e234891bb9b2f698f9\"",
+    "Content-Length": "23097",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:1a1f708da",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/jashkenas/backbone/master/backbone-min.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/jashkenas/backbone/master/backbone-min.js",
+  "_direct": true
+}

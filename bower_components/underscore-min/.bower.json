@@ -1,0 +1,14 @@
+{
+  "name": "underscore-min",
+  "_cacheHeaders": {
+    "ETag": "\"f01025b7bcaab18e6b698141c854f95669a5975c\"",
+    "Content-Length": "16449",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:f01025b7b",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/jashkenas/underscore/master/underscore-min.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/jashkenas/underscore/master/underscore-min.js",
+  "_direct": true
+}
