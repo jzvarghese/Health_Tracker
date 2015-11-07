@@ -43,7 +43,8 @@ app.Day = Backbone.Model.extend({
 		vitaminATotal: 0,
 		vitaminCTotal: 0,
 		calciumTotal: 0,
-		ironTotal: 0
+		ironTotal: 0,
+		foodIDs: []
 	},
 
 	initialize: function() {
@@ -88,6 +89,19 @@ app.Day = Backbone.Model.extend({
 
 	getIronTotal: function() {
 		return this.get('ironTotal');
+	},
+
+	// the Food collection will call this function
+	// when a new food item is added to the day
+	addFood: function(food) {
+		//add the food id to array
+		var ids = _.clone(this.get('foodIDs'));
+		ids.push(food.id);
+		this.set('foodIds',ids);
+
+		// update calorie count
+		this.set('calorieTotal',this.getCalorieTotal() + food.calorie);
+
 	}
 
 });
