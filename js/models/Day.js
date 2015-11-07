@@ -91,17 +91,47 @@ app.Day = Backbone.Model.extend({
 		return this.get('ironTotal');
 	},
 
-	// the Food collection will call this function
-	// when a new food item is added to the day
-	addFood: function(food) {
-		//add the food id to array
-		var ids = _.clone(this.get('foodIDs'));
-		ids.push(food.id);
-		this.set('foodIds',ids);
+	// When a new food is added to a day, if it doesn't already exist
+	// in the food list, then it will be added to the food list
 
-		// update calorie count
-		this.set('calorieTotal',this.getCalorieTotal() + food.calorie);
+	// irrespective of whether the food item is added to the food list,
+	// it's nutritional information will be added to the appropriate day
+
+	// where would be the best place to have this function? Since we
+	// are adding
+	addFood: function(foodInfo) {
+		//add the food id to array
+		// note, we need to clone the array to get around Backbone
+		// not firing off change events for adding elements to an array
+		var ids = _.clone(this.get('foodIDs'));
+		ids.push(foodInfo.id);
+		this.set('foodIDs', ids);
+
+		// update calorie total
+		this.set('calorieTotal',this.getCalorieTotal() + foodInfo.calories);
+
+		// update protein total
+		this.set('proteinTotal', this.getProteinTotal() + foodInfo.protein);
+
+		// update carb total
+		this.set('carbTotal', this.getCarbTotal() + foodInfo.carbs);
+
+		// update fiber total
+		this.set('fiberTotal', this.getFiberTotal() + foodInfo.fiber);
+
+		// update vitamin A total
+		this.set('vitaminATotal', this.getVitaminATotal() + foodInfo.vitaminA);
+
+		// update vitamin C total
+		this.set('vitaminCTotal', this.getVitaminCTotal() + foodInfo.vitaminC);
+
+		// update fiber total
+		this.set('calciumTotal', this.getCalciumTotal() + foodInfo.calcium);
+
+		// update fiber total
+		this.set('ironTotal', this.getIronTotal() + foodInfo.iron);
 
 	}
+
 
 });
