@@ -4,7 +4,7 @@ var app = app || {};
 
 // Food Model
 // ----------
-// The Food Model
+// The Food Model contains all the nutritional information for a given food item
 
 app.Food = Backbone.Model.extend({
 
@@ -23,7 +23,8 @@ app.Food = Backbone.Model.extend({
   //  Iron - percent of dv
 
 
-  // Default attributes ensure that each todo created has `title` and `completed` keys.
+  // Default attributes ensure that each todo created has `title` and
+  // `completed` keys.
   defaults: {
     //title of todo item
     name: '',
