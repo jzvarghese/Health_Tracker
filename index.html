@@ -1,29 +1,42 @@
 <!doctype html>
 <html lang="en">
-
-<head>
+  <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
-
     <title>Health Tracker</title>
-    <link rel="stylesheet" href="bower_components/boostrap/css/bootstrap.min.css">
-</head>
-
-<body>
+    <link rel="stylesheet" href="bower_components/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+  </head>
+  <body>
     <div class="container">
-
-
+      <!-- search bar + calendar row -->
+      <div class="row">
+        <!-- search bar column -->
+        <div class="col-md-6 col-lg-6">
+          <!-- input group class is needed for adding buttons to forms -->
+          <div class="input-group">
+            <input type="text" class="form-control" placeholder="I ate... ">
+            <!-- need .input-group-btn to wrap the buttons -->
+            <span class="input-group-btn">
+              <button class="btn btn-primary" type="button"><i class="fa fa-search"></i></button>
+            </span>
+          </div>
+        </div>
+        <!-- calendar column  -->
+        <div class="col-md-6 col-lg-6">
+        </div>
+      </div>
+      <!-- end row -->
     </div>
-
     <script src="bower_components/jquery-min/jquery-min.js"></script>
     <script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
     <script src="bower_components/underscore-min/underscore-min.js"></script>
     <script src="bower_components/backbone-min/backbone-min.js"></script>
     <script src="js/models/Food.js"></script>
-    <script src="js/models/Days.js"></script>
+    <!--<script src="js/models/Days.js"></script>-->
     <script src="js/collections/FoodList.js"></script>
     <script src="js/collections/DayList.js"></script>
-</body>
-
+  </body>
 </html>

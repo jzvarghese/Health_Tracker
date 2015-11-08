@@ -1,0 +1,56 @@
+
+/* styles and modifications made to Bootstrap */
+
+
+.btn-primary {
+  color: #fff;
+  background-color: #ff9f44;
+  border-color: #ff9f44;
+}
+
+.btn-primary:focus,
+.btn-primary.focus,
+.btn-primary:active,
+.btn-primary.active,
+.open > .btn-primary.dropdown-toggle {
+  color: #fff;
+  background-color: #FF994D;
+  border-color: #FF994D;
+}
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: #FF994D;
+  border-color: #FF994D;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.open > .btn-primary.dropdown-toggle {
+  background-image: none;
+}
+
+
+/* Change the color of the primary button to an ocean blue 4decff */
+.btn-primary-outline {
+  color: #FF994D;
+  background-color: transparent;
+  background-image: none;
+  border-color: #FF994D;
+}
+
+.btn-primary-outline:focus,
+.btn-primary-outline.focus,
+.btn-primary-outline:active,
+.btn-primary-outline.active,
+.open > .btn-primary-outline.dropdown-toggle {
+  color: #fff;
+  background-color: #FF994D;
+  border-color: #FF994D;
+}
+
+.btn-primary-outline:hover {
+  color: #fff;
+  background-color: #FF994D;
+  border-color: #FF994D;
+}
