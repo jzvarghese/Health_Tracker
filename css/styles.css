@@ -2,10 +2,24 @@
 /* styles and modifications made to Bootstrap */
 
 
+
+.top-row {
+  margin: 2em 0 0 0;
+}
+
+.form-control {
+  background-color: #F5F5F5;
+}
+
+.form-control:focus {
+  border-color: #FFD7AB;
+  outline: none;
+}
+
 .btn-primary {
   color: #fff;
-  background-color: #ff9f44;
-  border-color: #ff9f44;
+  background-color: #FF994D;
+  border-color: #FF994D;
 }
 
 .btn-primary:focus,
