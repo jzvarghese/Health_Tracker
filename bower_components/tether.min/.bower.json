@@ -1,0 +1,14 @@
+{
+  "name": "tether.min",
+  "_cacheHeaders": {
+    "ETag": "\"fceb25cf504b454a2192eccb1d66a4e42426d64e\"",
+    "Content-Length": "23217",
+    "Content-Type": "text/plain; charset=utf-8"
+  },
+  "_release": "e-tag:fceb25cf5",
+  "main": "index.js",
+  "_source": "https://raw.githubusercontent.com/HubSpot/tether/master/dist/js/tether.min.js",
+  "_target": "*",
+  "_originalSource": "https://raw.githubusercontent.com/HubSpot/tether/master/dist/js/tether.min.js",
+  "_direct": true
+}
