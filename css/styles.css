@@ -13,14 +13,22 @@ color: #F5F5F5;
 color: #3A99B2;
 */
 
+/* gray for info links
+color: #818a91;
+*/
+
 
 .top-row {
   margin: 2em 0 0 0;
 }
 
-a {
+.orange-text {
 	/* primary orange*/
 	color: #FF994D;
+}
+
+a {
+	color: #818a91;
 }
 
 a:hover{
