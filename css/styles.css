@@ -17,6 +17,12 @@ color: #3A99B2;
 color: #818a91;
 */
 
+.popover {
+  background-color: #5bc0de;
+  border-color: #fff;
+  color: #fff;
+}
+
 
 .orange-text {
 	/* primary orange*/
