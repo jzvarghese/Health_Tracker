@@ -24,9 +24,19 @@ color: #818a91;
 }
 
 
-.orange-text {
-	/* primary orange*/
+.text-orange {
+	/* primary orange */
 	color: #FF994D;
+}
+
+.info-color {
+  color: #5bc0de;
+}
+
+
+.text-blue {
+  /* primary blue */
+  color: #3A99B2;
 }
 
 a {
