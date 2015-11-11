@@ -20,6 +20,17 @@ color: #818a91;
 
 /* my own utility classes */
 
+
+/* UW represent! */
+.text-purple {
+  color: #4b2e83;
+}
+
+.text-gold {
+  color: #85754d;
+}
+
+
 .p-y-xs {
   padding-top: 0.7rem !important;
   padding-bottom: 0.7rem !important;
