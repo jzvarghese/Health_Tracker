@@ -17,6 +17,29 @@ color: #3A99B2;
 color: #818a91;
 */
 
+
+/* my own utility classes */
+
+.p-y-xs {
+  padding-top: 0.7rem !important;
+  padding-bottom: 0.7rem !important;
+}
+
+.p-t-xs {
+  padding-top: 0.7rem !important;
+}
+
+.p-b-xxs {
+  padding-bottom: 0.2rem !important;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+
 .popover {
   background-color: #5bc0de;
   border-color: #fff;
