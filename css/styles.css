@@ -20,6 +20,9 @@ color: #818a91;
 
 /* my own utility classes */
 
+@media (max-width: 34em) {
+
+}
 
 /* UW represent! */
 .text-purple {
