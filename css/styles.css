@@ -30,7 +30,14 @@ color: #818a91;
   color: #85754d;
 }
 
+.inline-block {
+  display: inline-block;
+}
 
+
+.m-l-xs {
+  margin-left: 0.7rem !important;
+}
 .p-y-xs {
   padding-top: 0.7rem !important;
   padding-bottom: 0.7rem !important;
