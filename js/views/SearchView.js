@@ -19,6 +19,9 @@ app.SearchView = Backbone.View.extend({
 
   // base URL for Nutrionix v1.1
   searchEndPoint: 'https://api.nutritionix.com/v1_1/search/',
+
+  // search fields, we are returning up to 10 results, have no real calorie limit
+  // and ...
   searchFields: '?results=0%3A10&cal_min=0&cal_max=50000&fields=item_name%2Cb' +
     'rand_name%2Citem_id%2Cbrand_id%2Cnf_calories%2Cnf_protein%2Cnf_total_car' +
     'bohydrate%2Cnf_dietary_fiber%2Cnf_vitamin_a_dv%2Cnf_vitamin_c_dv%2Cnf_cal'+
@@ -59,18 +62,13 @@ app.SearchView = Backbone.View.extend({
       dataType: 'json'
     })
     .done(function(data) {
-      // populate the auto complete list with the data
-      //data.forEach(self.renderGuesses);
+      // process search results
       console.log('success');
     })
     .fail(function() {
-      console.log(error);
+      console.log('error');
     });
 
-  },
-
-  renderGuesses: function (el, index, array) {
-    console.log(el.text);
   },
 
   // Re-render the titles of the todo item.
