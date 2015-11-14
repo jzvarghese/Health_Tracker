@@ -17,6 +17,14 @@ app.SearchView = Backbone.View.extend({
     'input': 'autoComplete'
   },
 
+  // base URL for Nutrionix v2 beta
+  baseURL: 'https://apibeta.nutritionix.com',
+
+  // auto-complete end point
+  autoCompleteEndPoint: '/v2/autocomplete?q=',
+
+
+
   // The TodoView listens for changes to its model, re-rendering. Since there's
   // a one-to-one correspondence between a **Todo** and a **TodoView** in this
   // app, we set a direct reference on the model for convenience.
@@ -30,6 +38,23 @@ app.SearchView = Backbone.View.extend({
   autoComplete: function() {
     console.log('changed');
     console.log(this.$el.val());
+
+    // note .trim() removes the whitespace at the beginning and end
+    // of the string
+    var autoCompleteQuery = baseURL + autoCompleteEndPoint +
+      encodeURIComponent(this.$el.val().trim()) + app.appID + app.appKey;
+
+    // get the auto complete terms
+    $.ajax({
+
+
+    })
+    .done(function() {
+        alert( "success" );
+    })
+    .fail(function() {
+        alert( "error" );
+    });
 
   },
 
