@@ -1,20 +1,20 @@
 var app = app || {};
 
-// Todo Item View
+// SearchView
 // --------------
 
-// The DOM element for a todo item...
+// view associated with text input element which is the search bar
 app.SearchView = Backbone.View.extend({
 
   //... is a list tag.
-  id: 'search',
+  el: '#search',
 
   // Cache the template function for a single item.
   //template: _.template( $('#item-template').html() ),
 
   // The DOM events specific to an item.
   events: {
-    'onchange #search': 'autoComplete'
+    'input': 'autoComplete'
   },
 
   // The TodoView listens for changes to its model, re-rendering. Since there's
@@ -29,6 +29,7 @@ app.SearchView = Backbone.View.extend({
   // API for list of possible search terms
   autoComplete: function() {
     console.log('changed');
+    console.log(this.$el.val());
 
   },
 
