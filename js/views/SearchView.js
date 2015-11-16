@@ -69,21 +69,22 @@ app.SearchView = Backbone.View.extend({
       var food = null;
       var model = null;
 
-      for(i = 0; i < results.length; i++) {
+      // iterate over the search results
+      for(var i = 0; i < results.length; i++) {
 
         // the fields object contains all the data we want, such as
         // name, number of calories, etc
         food = results[i].fields;
 
         // create model with the food data
-        model = new Food({
+        model = new app.Food({
           // this user ID will be obtained when the
           // app loads
-          userID: app.userID,
-
+          //userID: app.userID,
 
           foodID:   food.item_id,
           name:     food.item_name,
+          brand:    food.brand_name,
           calories: food.nf_calories,
           protein:  food.nf_protein,
           carbs:    food.nf_total_carbohydrate,
@@ -94,6 +95,8 @@ app.SearchView = Backbone.View.extend({
           iron:     food.nf_iron_dv
         });
 
+        // add the model to the searchResults collection
+        app.searchResults.add(model);
 
       }
 

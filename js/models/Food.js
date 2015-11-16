@@ -30,6 +30,7 @@ app.Food = Backbone.Model.extend({
     foodID: '',
     userID: '',
     name: '',
+    brand: '',
     calories: 0,
     protein: 0,
     carbs: 0,
