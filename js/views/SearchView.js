@@ -14,7 +14,7 @@ app.SearchView = Backbone.View.extend({
 
   // The DOM events specific to an item.
   events: {
-    'change': 'autoComplete'
+    'change': 'search'
   },
 
   // base URL for Nutrionix v1.1
@@ -39,7 +39,7 @@ app.SearchView = Backbone.View.extend({
   // Whenever the user types in a new letter to the search input,
   // this function will send off a GET request to the Nutrionix v2 beta
   // API for list of possible search terms
-  autoComplete: function() {
+  search: function() {
     var self = this;
     //console.log('changed');
     //console.log(this.$el.val());
@@ -64,6 +64,39 @@ app.SearchView = Backbone.View.extend({
     .done(function(data) {
       // process search results
       console.log('success');
+
+      var results = data.hits;
+      var food = null;
+      var model = null;
+
+      for(i = 0; i < results.length; i++) {
+
+        // the fields object contains all the data we want, such as
+        // name, number of calories, etc
+        food = results[i].fields;
+
+        // create model with the food data
+        model = new Food({
+          // this user ID will be obtained when the
+          // app loads
+          userID: app.userID,
+
+
+          foodID:   food.item_id,
+          name:     food.item_name,
+          calories: food.nf_calories,
+          protein:  food.nf_protein,
+          carbs:    food.nf_total_carbohydrate,
+          fiber:    food.nf_dietary_fiber,
+          vitaminA: food.nf_vitamin_a_dv,
+          vitaminC: food.nf_vitamin_c_dv,
+          calcium:  food.nf_calcium_dv,
+          iron:     food.nf_iron_dv
+        });
+
+
+      }
+
     })
     .fail(function() {
       console.log('error');

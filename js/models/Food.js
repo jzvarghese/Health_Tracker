@@ -27,6 +27,8 @@ app.Food = Backbone.Model.extend({
   // `completed` keys.
   defaults: {
     //title of todo item
+    foodID: '',
+    userID: '',
     name: '',
     calories: 0,
     protein: 0,
