@@ -12,6 +12,7 @@
   "dependencies": {
     "backbone-min": "https://raw.githubusercontent.com/jashkenas/backbone/master/backbone-min.js",
     "underscore-min": "https://raw.githubusercontent.com/jashkenas/underscore/master/underscore-min.js",
-    "jquery-min": "http://code.jquery.com/jquery-2.1.4.min.js"
+    "jquery-min": "http://code.jquery.com/jquery-2.1.4.min.js",
+    "handlebars": "~4.0.4"
   }
 }
