@@ -62,6 +62,13 @@ app.SearchView = Backbone.View.extend({
       dataType: 'json'
     })
     .done(function(data) {
+
+      // we have new search results, so get rid of the ones
+      // we currently have
+
+      // empty the current collection
+      app.searchResults.reset(null);
+
       // process search results
       console.log('success');
 

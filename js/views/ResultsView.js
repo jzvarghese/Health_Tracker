@@ -27,6 +27,9 @@ app.ResultsView = Backbone.View.extend({
 
     // listen for the add event for the searchResults collection
     this.listenTo(app.searchResults, 'add', this.render);
+
+    // listen for the 'reset' event when the collection is emptied
+    this.listenTo(app.searchResults, 'reset', this.reset);
   },
 
   // render the Food model that was just added to the searchResults collection
@@ -36,10 +39,17 @@ app.ResultsView = Backbone.View.extend({
     // get the newest model
     var latestModel = app.searchResults.last();
 
+    // pass it to the template
     var temp = this.template(latestModel.toJSON());
 
+    // append it to the page
     this.$el.append(temp);
 
+  },
+
+  // reset the list of search results so we can display the new results
+  reset: function() {
+    this.$el.html('');
   }
 
 });
