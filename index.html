@@ -54,7 +54,7 @@
           <!-- search results -->
           <div class="col-sm-12 col-md-6 col-lg-6 text-blue">
             <h2>Search Results</h2>
-            <ul class="list-group">
+            <ul id="searchResults" class="list-group">
               <li class="list-group-item">
                 <div class="row">
 
@@ -238,16 +238,47 @@
 
     </div> <!-- end wrap -->
     <script src="bower_components/jquery-min/jquery-min.js"></script>
-    <script src="bower_components/handlebars.min.js"></script>
+    <script src="bower_components/handlebars/handlebars.min.js"></script>
+
+    <script id="result-item-template" type="text/x-handlebars-template">
+      <li class="list-group-item">
+        <div class="row">
+          <div class="col-sm-2 col-md-2 col-lg-1">
+            <a href="#" class="pull-left text-orange"><i class="fa fa-plus-circle
+            fa-2x"></i></a>
+          </div> <!-- end add button col -->
+
+          <div class="col-sm-8 col-md-8 col-lg-10">
+            <header>
+              <h4 class="list-group-item-heading text-left inline-block m-y-0
+              text-center">{{name}}</h4>
+              <p class="text-muted inline-block m-l-xs m-y-0 text-center">
+              {{brand}}</p>
+            </header>
+          </div>
+
+          <div class="col-sm-2 col-md-2 col-lg-1">
+            <a href="#" data-toggle="popover" data-html="true" data-placement="left"
+            data-content="<div class='card card-block card-inverse card-info'><h4
+            class='card-title'>Food Item</h4><blockquote class='card-blockquote'>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer
+            posuere erat a ante.</p><footer>Someone famous in <cite title='Source
+            Title'>Source Title</cite></footer></blockquote></div>"
+            class="pull-right"><i class="fa fa-info-circle fa-2x"></i></a>
+          </div> <!-- end info button col -->
+
+        </div> <!-- end inner row -->
+      </li>
+    </script>
     <script src="bower_components/tether.min/tether.min.js"></script>
     <script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
     <script src="bower_components/underscore-min/underscore-min.js"></script>
     <script src="bower_components/backbone-min/backbone-min.js"></script>
     <script src="js/models/Food.js"></script>
-    <!--<script src="js/models/Days.js"></script>-->
     <script src="js/collections/FoodList.js"></script>
     <script src="js/collections/SearchResults.js"></script>
     <script src="js/views/SearchView.js"></script>
+    <script src="js/views/ResultsView.js"></script>
     <script src="js/healthTracker.js"></script>
   </body>
 </html>

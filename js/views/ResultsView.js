@@ -9,11 +9,13 @@ app.ResultsView = Backbone.View.extend({
   //... is a list tag.
   el: '#searchResults',
 
-  // Cache the template function for a single item.
-  //template: _.template( $('#item-template').html() ),
+  //Cache the template function for a single item.
+  template: Handlebars.compile( $("#result-item-template").html() ),
 
   // The DOM events specific to an item.
   events: {
+    // whenever a new model is added to the searchResults collection,
+    // we should render the model
 
   },
 
@@ -23,11 +25,23 @@ app.ResultsView = Backbone.View.extend({
   // app, we set a direct reference on the model for convenience.
   initialize: function() {
 
+    // listen for the add event for the searchResults collection
+    this.listenTo(app.searchResults, 'add', this.render);
   },
 
-  // Re-render the titles of the todo item.
+  // render the Food model that was just added to the searchResults collection
   render: function() {
+    console.log('rendering...');
+
+    // get the newest model
+    var latestModel = app.searchResults.last();
+
+    var temp = this.template(latestModel.toJSON());
+
+    this.$el.append(temp);
 
   }
 
 });
+
+app.resultsView = new app.ResultsView();
