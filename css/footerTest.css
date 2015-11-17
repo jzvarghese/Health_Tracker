@@ -1,4 +1,6 @@
 
+
+
 /* styles and modifications made to Bootstrap */
 
 /* primary orange
@@ -18,27 +20,20 @@ color: #818a91;
 */
 
 
+/* my own utility classes */
+
 html {
-  position: relative;
+  position: absolute;
   min-height: 100%;
+  background:#eee;
 }
 
 body {
-  margin-bottom: 5rem;
+	margin-bottom: 5rem;
 }
 
-/* my own utility classes */
+@media (max-width: 34em) {
 
-
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.brand {
-  font-size: 1rem;
-  font-weight: normal;
 }
 
 /* UW represent! */
@@ -71,7 +66,11 @@ body {
   padding-bottom: 0.2rem !important;
 }
 
-
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
 
 
 .popover {
