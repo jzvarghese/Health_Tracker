@@ -99,6 +99,7 @@ app.SearchView = Backbone.View.extend({
         app.searchResults.add(model);
 
       }
+      $('[data-toggle="popover"]').popover();
 
     })
     .fail(function() {
