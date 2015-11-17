@@ -18,10 +18,22 @@ color: #818a91;
 */
 
 
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  margin-bottom: 5rem;
+}
+
 /* my own utility classes */
 
-@media (max-width: 34em) {
 
+.footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
 }
 
 /* UW represent! */
@@ -54,11 +66,7 @@ color: #818a91;
   padding-bottom: 0.2rem !important;
 }
 
-.footer {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
+
 
 
 .popover {
