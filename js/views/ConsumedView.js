@@ -7,7 +7,7 @@ var app = app || {};
 app.ConsumedView = Backbone.View.extend({
 
   //... is a list tag.
-  el: '#searchResults',
+  el: '#foods-consumed',
 
   //Cache the template function for a single item.
   template: Handlebars.compile( $("#consumed-item-template").html() ),
@@ -20,12 +20,14 @@ app.ConsumedView = Backbone.View.extend({
 
   initialize: function() {
 
+    // listen for the add event for the foodList collection
+    this.listenTo(app.foodList, 'add', this.render);
 
   },
 
   // render the Food model that was just added to the searchResults collection
   render: function() {
-    console.log('rendering...');
+    console.log('rendering food...');
 
 
   },

@@ -7,15 +7,16 @@ var app = app || {};
 app.ResultsView = Backbone.View.extend({
 
   //... is a list tag.
-  el: '#searchResults',
+  el: '#search-results',
 
   //Cache the template function for a single item.
   template: Handlebars.compile( $("#result-item-template").html() ),
 
   // The DOM events specific to an item.
   events: {
-    // whenever a new model is added to the searchResults collection,
-    // we should render the model
+
+    // whenever we click on the plus icon, add that model to the foodlist
+    'click #add-food': 'addFood',
 
   },
 
@@ -50,6 +51,18 @@ app.ResultsView = Backbone.View.extend({
   // reset the list of search results so we can display the new results
   reset: function() {
     this.$el.html('');
+  },
+
+  addFood: function(event) {
+    console.log('adding...');
+
+    // get the id from the DOM element
+    var element = $(event.currentTarget);
+    var id = element.data('id');
+
+    var temp = app.searchResults.get(id);
+    // add the model to the list of foods we've eaten
+    app.foodList.add(temp);
   }
 
 });

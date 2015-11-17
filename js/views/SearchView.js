@@ -89,6 +89,7 @@ app.SearchView = Backbone.View.extend({
           // app loads
           //userID: app.userID,
 
+          id:       food.item_id,
           foodID:   food.item_id,
           name:     food.item_name,
           brand:    food.brand_name,
