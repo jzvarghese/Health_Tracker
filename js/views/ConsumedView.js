@@ -29,6 +29,14 @@ app.ConsumedView = Backbone.View.extend({
   render: function() {
     console.log('rendering food...');
 
+    // get the newest model
+    var latestModel = app.foodList.last();
+
+    // pass it to the template
+    var temp = this.template(latestModel.toJSON());
+
+    // append it to the page
+    this.$el.append(temp);
 
   },
 
