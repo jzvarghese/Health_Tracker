@@ -29,6 +29,9 @@ body {
 
 /* my own utility classes */
 
+.no-border {
+  border: none;
+}
 
 .footer {
   position: absolute;
@@ -39,6 +42,10 @@ body {
 .brand {
   font-size: 1rem;
   font-weight: normal;
+}
+
+.text-bold {
+  font-weight: bold;
 }
 
 /* UW represent! */
