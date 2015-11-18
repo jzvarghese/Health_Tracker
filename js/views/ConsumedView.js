@@ -14,8 +14,7 @@ app.ConsumedView = Backbone.View.extend({
 
   // The DOM events specific to an item.
   events: {
-
-
+    'click #delete-food': 'deleteFood',
   },
 
   initialize: function() {
@@ -23,23 +22,34 @@ app.ConsumedView = Backbone.View.extend({
     // listen for the add event for the foodList collection
     this.listenTo(app.foodList, 'add', this.render);
 
+    // re-render the element when the model has changed
+    this.listenTo(app.foodList, 'change:quantity', this.update);
+
+
   },
 
+
+
   // render the Food model that was just added to the searchResults collection
-  render: function() {
+  render: function(model) {
     console.log('rendering food...');
 
-    // get the newest model
-    var latestModel = app.foodList.last();
-
-    // pass it to the template
-    var temp = this.template(latestModel.toJSON());
+    // pass the model to the template
+    var temp = this.template(model.toJSON());
 
     // append it to the page
     this.$el.append(temp);
 
   },
 
+  // the actual model gets passed in, awesome
+  update: function(model) {
+    console.log('something');
+  },
+
+  deleteFood: function (event) {
+    // body...
+  },
   // reset the list of search results so we can display the new results
   reset: function() {
     this.$el.html('');

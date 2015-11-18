@@ -38,7 +38,8 @@ app.Food = Backbone.Model.extend({
     vitaminA: 0,
     vitaminC: 0,
     calcium: 0,
-    iron: 0
+    iron: 0,
+    quantity: 1
 
   },
 

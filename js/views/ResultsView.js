@@ -60,9 +60,25 @@ app.ResultsView = Backbone.View.extend({
     var element = $(event.currentTarget);
     var id = element.data('id');
 
-    var temp = app.searchResults.get(id);
-    // add the model to the list of foods we've eaten
-    app.foodList.add(temp);
+    // first check and see whether the food is in the foodList
+    var model = app.foodList.get(id);
+    var quan;
+
+    if(!model) {
+      // add the model to the list of foods we've eaten
+      app.foodList.add(app.searchResults.get(id));
+
+    } else {
+      // increase the quantity of the food that's already in the foodList
+
+      quan = model.get('quantity');
+      quan++;
+
+      model.set({quantity: quan});
+
+      console.log('model quantity increased');
+    }
+
   }
 
 });
