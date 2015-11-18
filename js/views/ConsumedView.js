@@ -53,15 +53,29 @@ app.ConsumedView = Backbone.View.extend({
     // select the paragraph that contains the quantity text
     var p = $('p[data-id="' + id + '"]');
 
+    // update the html with the new quantity
     p.html('Quantity: ' + quantity);
 
-    console.log('something');
   },
 
   // delete a food from the foodList
   deleteFood: function (event) {
-    // body...
+
+    // get the id from the DOM element
+    var element = $(event.currentTarget);
+    var id = element.data('id');
+
+    // now that we know what model is going to be removed, we can
+    // remove it from foodList and the DOM
+
+    // get the list item that corresponds to the food model and remove
+    // it from the DOM completely.
+    var li = $('li[data-id="' + id + '"]');
+    li.remove();
+
+    app.foodList.remove(id);
   },
+
   // reset the list of search results so we can display the new results
   reset: function() {
     this.$el.html('');
