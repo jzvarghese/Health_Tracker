@@ -53,6 +53,7 @@ app.ResultsView = Backbone.View.extend({
     this.$el.html('');
   },
 
+  // add food to the foodList
   addFood: function(event) {
     console.log('adding...');
 

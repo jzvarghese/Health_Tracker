@@ -44,9 +44,21 @@ app.ConsumedView = Backbone.View.extend({
 
   // the actual model gets passed in, awesome
   update: function(model) {
+
+    // get the html element that corresponds to this model, and just change the
+    // quantity
+    var id = model.attributes.id;
+    var quantity = model.attributes.quantity;
+
+    // select the paragraph that contains the quantity text
+    var p = $('p[data-id="' + id + '"]');
+
+    p.html('Quantity: ' + quantity);
+
     console.log('something');
   },
 
+  // delete a food from the foodList
   deleteFood: function (event) {
     // body...
   },
