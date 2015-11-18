@@ -34,14 +34,11 @@ app.ResultsView = Backbone.View.extend({
   },
 
   // render the Food model that was just added to the searchResults collection
-  render: function() {
+  render: function(model) {
     console.log('rendering...');
 
-    // get the newest model
-    var latestModel = app.searchResults.last();
-
     // pass it to the template
-    var temp = this.template(latestModel.toJSON());
+    var temp = this.template(model.toJSON());
 
     // append it to the page
     this.$el.append(temp);
