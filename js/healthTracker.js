@@ -17,6 +17,7 @@ $(function () {
 
   app.view = new app.SearchView();
 
+
   // load the data from the data base
   app.myFirebaseRef.once("value", function(data) {
 

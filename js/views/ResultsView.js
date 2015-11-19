@@ -69,7 +69,7 @@ app.ResultsView = Backbone.View.extend({
 
 
       //add the food to the database
-      app.myFirebaseRef.push({
+      app.myFirebaseRef.child(id).set({
 
         id: model.get('id'),
         foodID: model.get('foodID'),
