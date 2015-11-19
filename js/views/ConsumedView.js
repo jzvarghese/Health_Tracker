@@ -73,12 +73,7 @@ app.ConsumedView = Backbone.View.extend({
     var li = $('li[data-id="' + id + '"]');
     li.remove();
 
-    //delete the item from the database
-    new Firebase('https://fiery-inferno-1074.firebaseio.com/' + id).once('value',
-      function(snap) {
-      console.log('I fetched a user!', snap.val());
-    });
-
+    //remove item from database
     var dbItem = new Firebase('https://fiery-inferno-1074.firebaseio.com/' + id);
     dbItem.remove();
 

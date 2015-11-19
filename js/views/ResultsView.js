@@ -95,6 +95,9 @@ app.ResultsView = Backbone.View.extend({
 
       model.set({quantity: quan});
 
+      var dbItem = new Firebase('https://fiery-inferno-1074.firebaseio.com/' + id);
+      dbItem.update({"quantity": quan});
+
       console.log('model quantity increased');
     }
 
