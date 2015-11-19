@@ -11,7 +11,6 @@
   </head>
   <body>
 
-  <div id="wrap">
     <div class="container-fluid">
       <!-- search bar + calendar row -->
       <div class="row p-y background-smoke">
@@ -46,58 +45,27 @@
 
       <div class="container">
 
-        <div class="row text-blue">
-          <!--     calories: 0,
-                   protein: 0,
-                   carbs: 0,
-                   fiber: 0,
-              vitaminA: 0,
-              vitaminC: 0,
-              calcium: 0,
-              iron: 0, -->
-
-          <h4 class="text-center m-t">Nutrients and Vitamins</h2>
-
-          <div class="col-lg-6 col-md-6">
-
-            <ul class="list-group list-inline text-bold">
-              <li class="list-group-item no-border">Calories: 1000kcal</li>
-              <li class="list-group-item no-border">Protein: 35g</li>
-              <li class="list-group-item no-border">Carbohydrate: 55g</li>
-              <li class="list-group-item no-border">Fiber: 23g</li>
-            </ul>
-
-          </div> <!-- end cal/pro/carb/fiber list -->
-
-          <div class="col-lg-6 col-md-6">
-            <ul class="list-group list-inline text-bold">
-              <li class="list-group-item no-border">Vitamin A: 67% dv</li>
-              <li class="list-group-item no-border">Vitamin C: 34% dv</li>
-              <li class="list-group-item no-border">Calcium: 23% dv</li>
-              <li class="list-group-item no-border">Iron: 50% dv</li>
-            </ul>
-          </div> <!-- vitamin list -->
-
+        <div id="nutrient-total" class="row text-blue">
         </div> <!-- end total row -->
 
-        <div class="row m-y-md">
+      <div class="row m-y-md">
 
-          <!-- search results -->
-          <div class="col-sm-12 col-md-6 col-lg-6 text-blue">
-            <h2>Search Results</h2>
-            <ul id="search-results" class="list-group">
-            </ul>
-          </div> <!-- end col -->
+        <!-- search results -->
+        <div class="col-sm-12 col-md-6 col-lg-6 text-blue">
+          <h2>Search Results</h2>
+          <ul id="search-results" class="list-group">
+          </ul>
+        </div> <!-- end col -->
 
-          <!-- foods consumed  -->
+        <!-- foods consumed  -->
 
-          <div class="col-sm-12 col-md-6 col-lg-6 text-blue">
-            <h2>What I've eaten</h2>
-            <ul id="foods-consumed" class="list-group">
-            </ul>
-          </div> <!-- end col -->
+        <div class="col-sm-12 col-md-6 col-lg-6 text-blue">
+          <h2>What I've eaten</h2>
+          <ul id="foods-consumed" class="list-group">
+          </ul>
+        </div> <!-- end col -->
 
-        </div> <!-- end row -->
+      </div> <!-- end row -->
 
 
     </div><!-- end container (not fluid) -->
@@ -125,11 +93,30 @@
 
     </div> <!-- end container -->
 
-    </div> <!-- end wrap -->
     <script src="bower_components/jquery-min/jquery-min.js"></script>
     <script src="bower_components/handlebars/handlebars.min.js"></script>
     <script src="bower_components/tether.min/tether.min.js"></script>
     <script src="bower_components/bootstrap/js/bootstrap.min.js"></script>
+
+    <script id="nutrient-total-template" type="text/x-handlebars-template">
+      <h4 class="text-center m-t">Nutrients and Vitamins</h4>
+      <div class="col-lg-6 col-md-6">
+        <ul class="list-group list-inline text-bold">
+          <li class="list-group-item no-border">Calories: {{calorieTotal}}kcal</li>
+          <li class="list-group-item no-border">Protein: {{proteinTotal}}g</li>
+          <li class="list-group-item no-border">Carbohydrate: {{carbTotal}}g</li>
+          <li class="list-group-item no-border">Fiber: {{fiberTotal}}g</li>
+        </ul>
+      </div> <!-- end cal/pro/carb/fiber col -->
+      <div class="col-lg-6 col-md-6">
+        <ul class="list-group list-inline text-bold">
+          <li class="list-group-item no-border">Vitamin A: {{vitaminATotal}}% dv</li>
+          <li class="list-group-item no-border">Vitamin C: {{vitaminCTotal}}% dv</li>
+          <li class="list-group-item no-border">Calcium: {{calciumTotal}}% dv</li>
+          <li class="list-group-item no-border">Iron: {{ironTotal}}% dv</li>
+        </ul>
+      </div> <!-- vitamin col-->
+    </script>
 
     <script id="result-item-template" type="text/x-handlebars-template">
       <li class="list-group-item">
@@ -188,6 +175,7 @@
     <script src="js/collections/FoodList.js"></script>
     <script src="js/collections/SearchResults.js"></script>
     <script src="js/views/SearchView.js"></script>
+    <script src="js/views/NutrientView.js"></script>
     <script src="js/views/ResultsView.js"></script>
     <script src="js/views/ConsumedView.js"></script>
     <script src="js/healthTracker.js"></script>

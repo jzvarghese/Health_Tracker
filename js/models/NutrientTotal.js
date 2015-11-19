@@ -11,16 +11,14 @@ app.NutrientTotal = Backbone.Model.extend({
 
   // NutrientTotal will have the following attributes
 
-  //  ID - number corresponding to it's ID in the health api
-  //  Name - the name of the food item. E.g. Amy's Chewy Candy Bar Creamy
-  //  Calories - the number of calories in the food item
-  //  Protein - grams of protein in food item
-  //  Carbs - grams of carbs
-  //  Fiber - grams of fiber
-  //  Vitamin A - percent of daily value (dv)
-  //  Vitamin C - percent of dv
-  //  Calcium - percent of dv
-  //  Iron - percent of dv
+  //  calorieTotal - sum of all the calories for the foods in foodList
+  //  proteinTotal - sum of all the protein for the foods in foodList
+  //  carbTotal - sum of all the carbs for the foods in foodList
+  //  Fiber - sum of all the fiber for the foods in foodList
+  //  Vitamin A - sum of all the vitamin a for the foods in foodList
+  //  Vitamin C - sum of all the vitamin c for the foods in foodList
+  //  Calcium - sum of all the calcium for the foods in foodList
+  //  Iron - sum of all the iron for the foods in foodList
 
 
   // Default attributes ensure that each todo created has `title` and
@@ -78,7 +76,7 @@ app.NutrientTotal = Backbone.Model.extend({
       ironTotal: this.get('ironTotal') - model.get('iron'),
 
     });
-  }
+  },
 
 
 });
