@@ -47,6 +47,9 @@ app.NutrientTotal = Backbone.Model.extend({
 
     // listen for deletions from the foodList collection
     this.listenTo(app.foodList, 'remove', this.removeNutrients);
+
+    // listen for deletions from the foodList collection
+    this.listenTo(app.foodList, 'change:quantity', this.addNutrients);
   },
 
   addNutrients: function(model) {
@@ -65,15 +68,17 @@ app.NutrientTotal = Backbone.Model.extend({
   },
 
   removeNutrients: function(model) {
+
+    var scalar = model.get('quantity');
     this.set({
-      calorieTotal: this.get('calorieTotal') - model.get('calories'),
-      proteinTotal: this.get('proteinTotal') - model.get('protein'),
-      carbTotal: this.get('carbTotal') - model.get('carbs'),
-      fiberTotal: this.get('fiberTotal') - model.get('fiber'),
-      vitaminATotal: this.get('vitaminATotal') - model.get('vitaminA'),
-      vitaminCTotal: this.get('vitaminCTotal') - model.get('vitaminC'),
-      calciumTotal: this.get('calciumTotal') - model.get('calcium'),
-      ironTotal: this.get('ironTotal') - model.get('iron'),
+      calorieTotal: this.get('calorieTotal') - scalar * model.get('calories'),
+      proteinTotal: this.get('proteinTotal') - scalar * model.get('protein'),
+      carbTotal: this.get('carbTotal') - scalar * model.get('carbs'),
+      fiberTotal: this.get('fiberTotal') - scalar * model.get('fiber'),
+      vitaminATotal: this.get('vitaminATotal') - scalar * model.get('vitaminA'),
+      vitaminCTotal: this.get('vitaminCTotal') - scalar * model.get('vitaminC'),
+      calciumTotal: this.get('calciumTotal') - scalar * model.get('calcium'),
+      ironTotal: this.get('ironTotal') - scalar * model.get('iron'),
 
     });
   },
@@ -81,4 +86,4 @@ app.NutrientTotal = Backbone.Model.extend({
 
 });
 
-app.nutrientTotal = new NutrientTotal();
+app.nutrientTotal = new app.NutrientTotal();

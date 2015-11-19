@@ -20,7 +20,9 @@ app.NutrientView = Backbone.View.extend({
   initialize: function() {
 
     // listen for when the nutrientModel changes
-    this.listenTo(app.nutrientView, 'change', this.render);
+    this.listenTo(app.nutrientTotal, 'change', this.render);
+
+    this.render(app.nutrientTotal);
 
   },
 
