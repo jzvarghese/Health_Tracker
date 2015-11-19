@@ -12,7 +12,6 @@ app.FoodList = Backbone.Collection.extend({
   // Reference to this collection's model.
   model: app.Food,
 
-
 });
 
 // create an instance of the Days list

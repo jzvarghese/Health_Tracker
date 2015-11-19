@@ -50,7 +50,7 @@ app.ResultsView = Backbone.View.extend({
     this.$el.html('');
   },
 
-  // add food to the foodList
+  // add food to the foodList and the database
   addFood: function(event) {
     console.log('adding...');
 
@@ -64,7 +64,28 @@ app.ResultsView = Backbone.View.extend({
 
     if(!model) {
       // add the model to the list of foods we've eaten
-      app.foodList.add(app.searchResults.get(id));
+      model = app.searchResults.get(id);
+      app.foodList.add(model);
+
+
+      //add the food to the database
+      app.myFirebaseRef.push({
+
+        id: model.get('id'),
+        foodID: model.get('foodID'),
+        name: model.get('name'),
+        brand: model.get('brand'),
+        calories: model.get('calories'),
+        protein: model.get('protein'),
+        carbs: model.get('carbs'),
+        fiber: model.get('fiber'),
+        vitaminA: model.get('vitaminA'),
+        vitaminC: model.get('vitaminC'),
+        calcium: model.get('calcium'),
+        iron: model.get('iron'),
+        quantity: model.get('quantity')
+
+      });
 
     } else {
       // increase the quantity of the food that's already in the foodList
