@@ -21,11 +21,18 @@ color: #818a91;
 html {
   position: relative;
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 body {
   margin-bottom: 5rem;
 }
+
+.width-full {
+  width: 100vw;
+  max-width: 100vw;
+}
+
 
 /* my own utility classes */
 
