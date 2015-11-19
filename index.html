@@ -102,7 +102,7 @@
       <h4 class="text-center m-t">Nutrients and Vitamins</h4>
       <div class="col-lg-6 col-md-6">
         <ul class="list-group list-inline text-bold">
-          <li class="list-group-item no-border">Calories: {{calorieTotal}}kcal</li>
+          <li class="list-group-item no-border">Calories: {{calorieTotal}}</li>
           <li class="list-group-item no-border">Protein: {{proteinTotal}}g</li>
           <li class="list-group-item no-border">Carbohydrate: {{carbTotal}}g</li>
           <li class="list-group-item no-border">Fiber: {{fiberTotal}}g</li>
@@ -135,8 +135,19 @@
           </div>
 
           <div class="col-sm-2 col-md-2 col-lg-1">
-            <a href="#" data-toggle="popover" data-html="true" data-placement="right" data-content="<div class='card card-block card-inverse card-info'><h4 class='card-title'>Food Item</h4><blockquote class='card-blockquote'>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer posuere erat a ante.</p><footer>Someone famous in <cite title='Source Title'>Source Title</cite></footer></blockquote></div>" class="pull-right"><i class="fa fa-info-circle fa-2x"></i></a>
+            <a href="#" data-toggle="popover" data-html="true" data-placement="right" data-trigger="click" data-content="<div class='card card-block card-inverse card-info m-x-0 m-y-0 p-x-0 p-y-0'>
+                <ul class='p-l'>
+                  <li>Calories: {{calories}}</li>
+                  <li>Carbohydrates: {{carbs}}g</li>
+                  <li>Fiber: {{fiber}}g</li>
+                  <li>Protein: {{protein}}g</li>
+                  <li>Vitamin A: {{vitaminA}}%</li>
+                  <li>Vitamin C: {{vitaminC}}%</li>
+                  <li>Calcium: {{calcium}}%</li>
+                  <li>Iron: {{iron}}%</li>
+
+
+            </ul>" class="pull-right"><i class="fa fa-info-circle fa-2x"></i></a>
           </div> <!-- end info link col -->
 
         </div> <!-- end inner row -->

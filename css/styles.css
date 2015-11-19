@@ -33,6 +33,24 @@ body {
   border: none;
 }
 
+.popover-title {
+  border: none;
+  padding: 0;
+}
+
+.popover-content {
+  padding: 9px 14px 0 9px;
+}
+
+.popover.popover-right .popover-arrow:after,
+.popover.bs-tether-element-attached-left .popover-arrow:after {
+  bottom: -10px;
+  left: 1px;
+  content: "";
+  border-right-color: #5bc0de;
+  border-left-width: 0;
+}
+
 .footer {
   position: absolute;
   bottom: 0;
