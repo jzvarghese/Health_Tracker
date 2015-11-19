@@ -81,6 +81,11 @@ app.NutrientTotal = Backbone.Model.extend({
       ironTotal: this.get('ironTotal') - scalar * model.get('iron'),
 
     });
+
+    // set the quantity back to one in case we add it back later
+    // and supress the change event so it's not added to the
+    // nutrientTotal model
+    model.set({'quantity': 1}, {silent: true});
   },
 
 

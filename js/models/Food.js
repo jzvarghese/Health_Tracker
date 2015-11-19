@@ -46,40 +46,6 @@ app.Food = Backbone.Model.extend({
 
   initialize: function(argument) {
   	// body...
-  },
-  // These getters seem to make things cleaner but I'm not entirely
-  // sure if I even need them
-  getFoodName: function() {
-  	return this.get('name');
-  },
-
-  getFoodCalories: function() {
-  	return this.get('calories');
-  },
-
-  getFoodProtein: function() {
-  	return this.get('protein');
-  },
-
-  getFoodFiber: function() {
-  	return this.get('fiber');
-  },
-
-  getFoodVitaminA: function() {
-  	return this.get('vitaminA');
-  },
-
-  getFoodVitaminC: function() {
-  	return this.get('vitaminC');
-  },
-
-  getFoodCalcium: function() {
-  	return this.get('calcium');
-  },
-
-  getFoodIron: function() {
-  	return this.get('iron');
   }
-
 
 });
