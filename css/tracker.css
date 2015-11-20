@@ -20,6 +20,12 @@ a:active {
   color: #F5F5F5;
 }
 
+@media (max-width: 600px) {
+  html {
+    font-size: 12px;
+  }
+}
+
 .width-full {
   width: 100vw;
   max-width: 100vw;
@@ -98,6 +104,15 @@ a:active {
   content: "";
   border-right-color: #5bc0de;
   border-left-width: 0;
+}
+
+.popover.popover-left .popover-arrow:after,
+.popover.bs-tether-element-attached-right .popover-arrow:after {
+  right: 1px;
+  bottom: -10px;
+  content: "";
+  border-right-width: 0;
+  border-left-color: #5bc0de;
 }
 
 .form-control {
