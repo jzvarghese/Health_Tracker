@@ -16,7 +16,7 @@ The app has been built with the following Frameworks/Tools:
 
 ## How to Run
 
-Simply navigate to: [http://jzvarghese.github.io/health_tracker](http://jzvarghese.github.io/health_tracker)
+Simply navigate to: [http://jzvarghese.github.io/Health_Tracker/](http://jzvarghese.github.io/Health_Tracker/)
 
 
 ## References
