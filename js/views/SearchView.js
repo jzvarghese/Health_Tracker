@@ -40,9 +40,12 @@ app.SearchView = Backbone.View.extend({
   // this function will send off a GET request to the Nutrionix v2 beta
   // API for list of possible search terms
   search: function() {
+
+    // load loading icon
+    $('#search-results').html('<h1 class="text-center m-y-lg"><i class="fa ' +
+      'fa-spinner fa-pulse"></i></h1>');
+
     var self = this;
-    //console.log('changed');
-    //console.log(this.$el.val());
 
     // get the value and make sure it's nonzero
     var query = this.$el.val().trim();
@@ -63,14 +66,14 @@ app.SearchView = Backbone.View.extend({
     })
     .done(function(data) {
 
+      // the search was a success, so remove the loading icon
+      $('#search-results').html('');
+
       // we have new search results, so get rid of the ones
       // we currently have
 
       // empty the current collection
       app.searchResults.reset(null);
-
-      // process search results
-      console.log('success');
 
       var results = data.hits;
       var food = null;
@@ -113,12 +116,9 @@ app.SearchView = Backbone.View.extend({
     })
     .fail(function() {
       console.log('error');
+      $('#search-results').html('<p class="text-blue">Failed to load the' +
+        ' search results. Please try again.</p>');
     });
-
-  },
-
-  // Re-render the titles of the todo item.
-  render: function() {
 
   }
 

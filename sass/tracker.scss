@@ -48,6 +48,12 @@ a:active {
   }
 }
 
+@media (max-width: 48em) {
+  #main-logo {
+  	padding-left: 20%;
+  }
+}
+
 .width-full {
   width: $full-vw;
   max-width: $full-vw;

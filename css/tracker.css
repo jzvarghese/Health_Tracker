@@ -26,6 +26,12 @@ a:active {
   }
 }
 
+@media (max-width: 48em) {
+  #main-logo {
+    padding-left: 20%;
+  }
+}
+
 .width-full {
   width: 100vw;
   max-width: 100vw;
