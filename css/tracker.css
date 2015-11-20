@@ -1,0 +1,18 @@
+body {
+  font: 300 16px/1.2em "Lato", sans-serif;
+  color: #0CF;
+}
+
+.base-para, .bold-para, .italic-para {
+  font-family: "Times New Roman", Times, serif;
+  font-size: 18px;
+  line-height: 1.25em;
+}
+
+.bold-para {
+  font-weight: bold;
+}
+
+.italic-para {
+  font-style: italic;
+}

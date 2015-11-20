@@ -1,0 +1,24 @@
+{
+  "name": "health_tracker",
+  "version": "1.0.0",
+  "description": "An application to track the macro-nutrients of all the foods consumed",
+  "main": "index.html",
+  "dependencies": {},
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-sass": "^2.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jzvarghese/Health_Tracker.git"
+  },
+  "author": "Justin Varghese",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jzvarghese/Health_Tracker/issues"
+  },
+  "homepage": "https://github.com/jzvarghese/Health_Tracker#readme"
+}
