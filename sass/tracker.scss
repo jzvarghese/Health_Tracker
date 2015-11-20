@@ -1,3 +1,24 @@
+// Variables
+
+// primary blue color
+$primary-blue: #3A99B2;
+
+$primary-orange: #FF994D;
+
+$ocean-blue: #5bc0de;
+
+$link-gray: #818a91;
+
+$white: #fff;
+
+$smoke: #F5F5F5;
+
+$full-vw: 100vw;
+
+$xs: 0.7rem;
+
+$xxs: 0.2rem;
+
 html {
   position: relative;
   min-height: 100%;
@@ -9,23 +30,23 @@ body {
 }
 
 a {
-  color: #818a91;
+  color: $link-gray;
 }
 
-a:hover {
-  color: #3A99B2;
+a:hover{
+  color: $primary-blue;
 }
 
 a:active {
-  color: #F5F5F5;
+  color: $smoke;
 }
 
 .width-full {
-  width: 100vw;
-  max-width: 100vw;
+  width: $full-vw;
+  max-width: $full-vw;
 }
 
-.no-border, .popover-title {
+.no-border {
   border: none;
 }
 
@@ -45,15 +66,15 @@ a:active {
 }
 
 .text-orange {
-  color: #FF994D;
+  color: $primary-orange
 }
 
 .text-blue {
-  color: #3A99B2;
+  color: $primary-blue;
 }
 
 .background-smoke {
-  background-color: #F5F5F5;
+  background-color: $smoke;
 }
 
 .inline-block {
@@ -61,29 +82,31 @@ a:active {
 }
 
 .m-l-xs {
-  margin-left: 0.7rem !important;
+  margin-left: $xs !important;
 }
 
 .p-y-xs {
-  padding-top: 0.7rem !important;
-  padding-bottom: 0.7rem !important;
+  padding-top: $xs !important;
+  padding-bottom: $xs !important;
 }
 
 .p-t-xs {
-  padding-top: 0.7rem !important;
+  padding-top: $xs !important;
 }
 
 .p-b-xxs {
-  padding-bottom: 0.2rem !important;
+  padding-bottom: $xxs !important;
 }
 
+//popover classes that I modified for the project
 .popover {
-  background-color: #5bc0de;
-  border-color: #fff;
-  color: #fff;
+  background-color: $ocean-blue;
+  border-color: $white;
+  color: $white;
 }
 
 .popover-title {
+  @extend .no-border;
   padding: 0;
 }
 
@@ -96,12 +119,12 @@ a:active {
   bottom: -10px;
   left: 1px;
   content: "";
-  border-right-color: #5bc0de;
+  border-right-color: $ocean-blue;
   border-left-width: 0;
 }
 
 .form-control {
-  background-color: #fff;
+  background-color: $white;
 }
 
 .form-control:focus {
@@ -109,10 +132,16 @@ a:active {
   outline: none;
 }
 
+
+@mixin btn-colors($text-color, $bg-color) {
+  color: $text-color;
+  background-color: $bg-color;
+  border-color: $bg-color;
+}
+
+
 .btn-primary {
-  color: #fff;
-  background-color: #FF994D;
-  border-color: #FF994D;
+  @include btn-colors($white, $primary-orange);
 }
 
 .btn-primary:focus,
@@ -120,15 +149,11 @@ a:active {
 .btn-primary:active,
 .btn-primary.active,
 .open > .btn-primary.dropdown-toggle {
-  color: #fff;
-  background-color: #FF994D;
-  border-color: #FF994D;
+  @include btn-colors($white, $primary-orange);
 }
 
 .btn-primary:hover {
-  color: #fff;
-  background-color: #3A99B2;
-  border-color: #3A99B2;
+  @include btn-colors($white, $primary-blue);
 }
 
 .btn-primary:active,
@@ -137,12 +162,13 @@ a:active {
   background-image: none;
 }
 
+
 /* Change the color of the primary button to an ocean blue 4decff */
 .btn-primary-outline {
-  color: #FF994D;
+  color: $primary-orange;
   background-color: transparent;
   background-image: none;
-  border-color: #FF994D;
+  border-color: $primary-orange;
 }
 
 .btn-primary-outline:focus,
@@ -150,13 +176,9 @@ a:active {
 .btn-primary-outline:active,
 .btn-primary-outline.active,
 .open > .btn-primary-outline.dropdown-toggle {
-  color: #fff;
-  background-color: #FF994D;
-  border-color: #FF994D;
+  @include btn-colors($white, $primary-orange);
 }
 
 .btn-primary-outline:hover {
-  color: #fff;
-  background-color: #FF994D;
-  border-color: #FF994D;
+  @include btn-colors($white, $primary-orange);
 }
