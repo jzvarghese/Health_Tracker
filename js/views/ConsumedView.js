@@ -25,6 +25,48 @@ app.ConsumedView = Backbone.View.extend({
     // re-render the element when the model has changed
     this.listenTo(app.foodList, 'change:quantity', this.update);
 
+    // create reference to the database
+    app.myFirebaseRef = new Firebase("https://fiery-inferno-1074.firebaseio.com/");
+
+    // load loading icon
+    this.$el.html('<h1 class="text-center m-y-lg"><i class="fa fa-spinner fa-pulse">' +
+      '</i></h1>');
+
+    // load the data from the data base
+    app.myFirebaseRef.once("value", function(data) {
+
+      // remove the loading icon
+      $('#foods-consumed').html('');
+
+      // data.val() is an object that contains the objects that
+      // we stored
+      var food;
+      var model;
+
+      data.forEach(function(obj) {
+        food = obj.val();
+
+        // create model with the food data
+          model = new app.Food({
+            id:       food.id,
+            foodID:   food.foodID,
+            name:     food.name,
+            brand:    food.brand,
+            calories: food.calories,
+            protein:  food.protein,
+            carbs:    food.carbs,
+            fiber:    food.fiber,
+            vitaminA: food.vitaminA,
+            vitaminC: food.vitaminC,
+            calcium:  food.calcium,
+            iron:     food.iron
+          });
+
+          app.foodList.add(model);
+      });
+
+      console.log('load');
+    });
 
   },
 
