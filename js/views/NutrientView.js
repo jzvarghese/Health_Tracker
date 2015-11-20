@@ -6,16 +6,10 @@ var app = app || {};
 // view associated with the nutrient totals
 app.NutrientView = Backbone.View.extend({
 
-  //... is a list tag.
   el: '#nutrient-total',
 
   //Cache the template function for a single item.
   template: Handlebars.compile( $("#nutrient-total-template").html() ),
-
-  // The DOM events specific to an item.
-  events: {
-
-  },
 
   initialize: function() {
 
@@ -26,10 +20,8 @@ app.NutrientView = Backbone.View.extend({
 
   },
 
-
   // render the Food model that was just added to the searchResults collection
   render: function(model) {
-    console.log('rendering totals...');
 
     // pass the model to the template
     var temp = this.template(model.toJSON());
@@ -37,11 +29,6 @@ app.NutrientView = Backbone.View.extend({
     // append it to the page
     this.$el.html(temp);
 
-  },
-
-  // reset the list of search results so we can display the new results
-  reset: function() {
-    this.$el.html('');
   }
 
 });

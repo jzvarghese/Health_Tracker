@@ -3,26 +3,26 @@ var app = app || {};
 // ConsumedView
 // --------------
 
-// view associated with the search results
+// view associated with the consumed foods
 app.ConsumedView = Backbone.View.extend({
 
-  //... is a list tag.
   el: '#foods-consumed',
 
   //Cache the template function for a single item.
   template: Handlebars.compile( $("#consumed-item-template").html() ),
 
-  // The DOM events specific to an item.
   events: {
     'click #delete-food': 'deleteFood',
   },
 
   initialize: function() {
 
+    var self = this;
+
     // listen for the add event for the foodList collection
     this.listenTo(app.foodList, 'add', this.render);
 
-    // re-render the element when the model has changed
+    // re-render the element when the quantity has changed
     this.listenTo(app.foodList, 'change:quantity', this.update);
 
     // create reference to the database
@@ -32,14 +32,12 @@ app.ConsumedView = Backbone.View.extend({
     this.$el.html('<h1 class="text-center m-y-lg"><i class="fa fa-spinner fa-pulse">' +
       '</i></h1>');
 
-    // load the data from the data base
+    // load the data from the database
     app.myFirebaseRef.once("value", function(data) {
 
       // remove the loading icon
-      $('#foods-consumed').html('');
+      self.reset();
 
-      // data.val() is an object that contains the objects that
-      // we stored
       var food;
       var model;
 
@@ -62,19 +60,16 @@ app.ConsumedView = Backbone.View.extend({
             iron:     food.iron
           });
 
+          // add the model to the collection
           app.foodList.add(model);
       });
 
-      console.log('load');
     });
 
   },
 
-
-
   // render the Food model that was just added to the searchResults collection
   render: function(model) {
-    console.log('rendering food...');
 
     // pass the model to the template
     var temp = this.template(model.toJSON());
@@ -87,7 +82,7 @@ app.ConsumedView = Backbone.View.extend({
 
   },
 
-  // the actual model gets passed in, awesome
+  // update the view because the quantity increased
   update: function(model) {
 
     // get the html element that corresponds to this model, and just change the
@@ -103,7 +98,7 @@ app.ConsumedView = Backbone.View.extend({
 
   },
 
-  // delete a food from the foodList
+  // delete a food from the foodList, DOM, and database
   deleteFood: function (event) {
 
     // get the id from the DOM element
