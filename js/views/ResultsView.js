@@ -6,24 +6,17 @@ var app = app || {};
 // view associated with the search results
 app.ResultsView = Backbone.View.extend({
 
-  //... is a list tag.
   el: '#search-results',
 
   //Cache the template function for a single item.
   template: Handlebars.compile( $("#result-item-template").html() ),
 
-  // The DOM events specific to an item.
   events: {
-
     // whenever we click on the plus icon, add that model to the foodlist
     'click #add-food': 'addFood',
-
   },
 
 
-  // The TodoView listens for changes to its model, re-rendering. Since there's
-  // a one-to-one correspondence between a **Todo** and a **TodoView** in this
-  // app, we set a direct reference on the model for convenience.
   initialize: function() {
 
     // listen for the add event for the searchResults collection
@@ -35,7 +28,6 @@ app.ResultsView = Backbone.View.extend({
 
   // render the Food model that was just added to the searchResults collection
   render: function(model) {
-    console.log('rendering...');
 
     // pass it to the template
     var temp = this.template(model.toJSON());
@@ -52,7 +44,6 @@ app.ResultsView = Backbone.View.extend({
 
   // add food to the foodList and the database
   addFood: function(event) {
-    console.log('adding...');
 
     // get the id from the DOM element
     var element = $(event.currentTarget);
@@ -66,7 +57,6 @@ app.ResultsView = Backbone.View.extend({
       // add the model to the list of foods we've eaten
       model = app.searchResults.get(id);
       app.foodList.add(model);
-
 
       //add the food to the database
       app.myFirebaseRef.child(id).set({
@@ -88,8 +78,8 @@ app.ResultsView = Backbone.View.extend({
       });
 
     } else {
-      // increase the quantity of the food that's already in the foodList
 
+      // increase the quantity of the food that's already in the foodList
       quan = model.get('quantity');
       quan++;
 
@@ -98,7 +88,6 @@ app.ResultsView = Backbone.View.extend({
       var dbItem = new Firebase('https://fiery-inferno-1074.firebaseio.com/' + id);
       dbItem.update({"quantity": quan});
 
-      console.log('model quantity increased');
     }
 
   }

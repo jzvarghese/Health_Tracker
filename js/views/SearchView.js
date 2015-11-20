@@ -6,13 +6,8 @@ var app = app || {};
 // view associated with text input element which is the search bar
 app.SearchView = Backbone.View.extend({
 
-  //... is a list tag.
   el: '#search',
 
-  // Cache the template function for a single item.
-  //template: _.template( $('#item-template').html() ),
-
-  // The DOM events specific to an item.
   events: {
     'change': 'search'
   },
@@ -27,18 +22,11 @@ app.SearchView = Backbone.View.extend({
     'bohydrate%2Cnf_dietary_fiber%2Cnf_vitamin_a_dv%2Cnf_vitamin_c_dv%2Cnf_cal'+
     'cium_dv%2Cnf_iron_dv',
 
-
-
-  // The TodoView listens for changes to its model, re-rendering. Since there's
-  // a one-to-one correspondence between a **Todo** and a **TodoView** in this
-  // app, we set a direct reference on the model for convenience.
   initialize: function() {
 
   },
 
-  // Whenever the user types in a new letter to the search input,
-  // this function will send off a GET request to the Nutrionix v2 beta
-  // API for list of possible search terms
+  // search the health databased based on the users query
   search: function() {
 
     // load loading icon
@@ -54,12 +42,10 @@ app.SearchView = Backbone.View.extend({
       console.log('no search');
       return 0;
     }
-    // note .trim() removes the whitespace at the beginning and end
-    // of the string
+
     var queryURL = this.searchEndPoint + encodeURIComponent(query) +
       this.searchFields + app.appID + app.appKey;
 
-    // get the auto complete terms
     $.ajax({
       url: queryURL,
       dataType: 'json'
