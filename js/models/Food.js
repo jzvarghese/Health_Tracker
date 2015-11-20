@@ -13,7 +13,7 @@ app.Food = Backbone.Model.extend({
 
   //  ID - number corresponding to it's ID in the health api
   //  Name - the name of the food item. E.g. Amy's Chewy Candy Bar Creamy
-  //  Calories - the number of calories in the food item
+  //  Calories - the number of calories in the food item measured in kcal
   //  Protein - grams of protein in food item
   //  Carbs - grams of carbs
   //  Fiber - grams of fiber
@@ -23,10 +23,8 @@ app.Food = Backbone.Model.extend({
   //  Iron - percent of dv
 
 
-  // Default attributes ensure that each todo created has `title` and
-  // `completed` keys.
+  // Default attributes
   defaults: {
-    //title of todo item
     foodID: '',
     userID: '',
     name: '',
@@ -40,7 +38,6 @@ app.Food = Backbone.Model.extend({
     calcium: 0,
     iron: 0,
     quantity: 1
-
   },
 
 

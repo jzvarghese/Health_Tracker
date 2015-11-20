@@ -14,5 +14,5 @@ app.FoodList = Backbone.Collection.extend({
 
 });
 
-// create an instance of the Days list
+// create an instance of the FoodList collection
 app.foodList = new app.FoodList();

@@ -1,10 +1,11 @@
-// js/models/Food.js
+// js/models/NutrientTotal.js
 
 var app = app || {};
 
-// Food Model
+// NutrientTotal Model
 // ----------
-// The Food Model contains all the nutritional information for a given food item
+// The NutrientTotal Model contains the sum of all the nutritional information
+// for the food models in the foodList collection
 
 app.NutrientTotal = Backbone.Model.extend({
 
@@ -21,10 +22,8 @@ app.NutrientTotal = Backbone.Model.extend({
   //  Iron - sum of all the iron for the foods in foodList
 
 
-  // Default attributes ensure that each todo created has `title` and
-  // `completed` keys.
+  // Default attributes
   defaults: {
-
     userID: '',
     name: '',
     brand: '',
@@ -36,7 +35,6 @@ app.NutrientTotal = Backbone.Model.extend({
     vitaminCTotal: 0,
     calciumTotal: 0,
     ironTotal: 0,
-
   },
 
 
@@ -48,12 +46,13 @@ app.NutrientTotal = Backbone.Model.extend({
     // listen for deletions from the foodList collection
     this.listenTo(app.foodList, 'remove', this.removeNutrients);
 
-    // listen for deletions from the foodList collection
+    // listen for changes to the quantity in the foodList collection
     this.listenTo(app.foodList, 'change:quantity', this.addNutrients);
   },
 
   addNutrients: function(model) {
 
+    // a food has been added, so update the totals
     this.set({
       calorieTotal: this.get('calorieTotal') + model.get('calories'),
       proteinTotal: this.get('proteinTotal') + model.get('protein'),
@@ -69,6 +68,8 @@ app.NutrientTotal = Backbone.Model.extend({
 
   removeNutrients: function(model) {
 
+    // get the scalar value so we know how many instances of the food
+    // to subtract
     var scalar = model.get('quantity');
     this.set({
       calorieTotal: this.get('calorieTotal') - scalar * model.get('calories'),
@@ -82,7 +83,7 @@ app.NutrientTotal = Backbone.Model.extend({
 
     });
 
-    // set the quantity back to one in case we add it back later
+    // set the quantity back to 1 in case we add it back later
     // and supress the change event so it's not added to the
     // nutrientTotal model
     model.set({'quantity': 1}, {silent: true});

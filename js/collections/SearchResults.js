@@ -12,8 +12,7 @@ app.SearchResults = Backbone.Collection.extend({
   // Reference to this collection's model.
   model: app.Food,
 
-
 });
 
-// create an instance of the Days list
+// create an instance of the SearchResults Collection
 app.searchResults = new app.SearchResults();
