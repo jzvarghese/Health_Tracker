@@ -93,14 +93,14 @@ app.SearchView = Backbone.View.extend({
           foodID:   food.item_id,
           name:     food.item_name,
           brand:    food.brand_name,
-          calories: food.nf_calories,
-          protein:  food.nf_protein,
-          carbs:    food.nf_total_carbohydrate,
-          fiber:    food.nf_dietary_fiber,
-          vitaminA: food.nf_vitamin_a_dv,
-          vitaminC: food.nf_vitamin_c_dv,
-          calcium:  food.nf_calcium_dv,
-          iron:     food.nf_iron_dv
+          calories: Math.round(food.nf_calories),
+          protein:  Math.round(food.nf_protein),
+          carbs:    Math.round(food.nf_total_carbohydrate),
+          fiber:    Math.round(food.nf_dietary_fiber),
+          vitaminA: Math.round(food.nf_vitamin_a_dv),
+          vitaminC: Math.round(food.nf_vitamin_c_dv),
+          calcium:  Math.round(food.nf_calcium_dv),
+          iron:     Math.round(food.nf_iron_dv)
         });
 
         // add the model to the searchResults collection

@@ -40,6 +40,9 @@ app.ConsumedView = Backbone.View.extend({
     // append it to the page
     this.$el.append(temp);
 
+    // enable the popover
+    $('[data-toggle="popover"]').popover();
+
   },
 
   // the actual model gets passed in, awesome
